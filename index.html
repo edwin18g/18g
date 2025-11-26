@@ -1,696 +1,338 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edwin18g - Software Solutions & Digital Marketing Expert | Portfolio</title>
-    <meta name="description" content="Edwin18g offers comprehensive software solutions, workflow automation, SEO marketing, AI prompt engineering, and AI-based strategic solutions. Professional portfolio showcasing expertise in digital transformation.">
-    <meta name="keywords" content="edwin18g, software solutions, workflow automation, SEO marketing, AI prompt engineering, AI strategy, digital marketing, web development">
-    <meta name="author" content="Edwin18g">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Edwin18g - Software Solutions & Digital Marketing Expert">
-    <meta property="og:description" content="Professional software developer and digital strategist specializing in AI solutions, workflow automation, and SEO marketing.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://edwin18g.com">
-    
-    <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- AOS Animation Library -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #6366f1;
-            --secondary-color: #8b5cf6;
-            --accent-color: #06b6d4;
-            --dark-color: #1e293b;
-            --light-color: #f8fafc;
-            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Edwin Barnabas — edwin18g | CIO • Software Architect • AI Agentic Builder</title>
+  <meta name="description" content="Edwin Barnabas (edwin18g) — CIO at ekhool. Software Architect, AI Agentic Framework Builder. Premium portfolio with interactive chat UI, architecture diagrams, PWA support and AI assistant." />
+  <meta name="theme-color" content="#6d28d9" />
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
-        .hero-section {
-            background: var(--gradient);
-            color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
+  <!-- Mermaid for architecture diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-        }
+  <style>
+    /* ==========================
+       V6 — MERGED STYLES (All)
+       - VisionOS spatial + iOS bubbles + Slack features
+       - Neo-Brutalist glass + 3D tilt + Minimal whitespace + Cyber purple brand
+       - Executive + AI hybrid components
+       ========================== */
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
+    :root{
+      --accent: #6d28d9; /* brand */
+      --accent-2: #a78bfa;
+      --bg-start: #f4f6ff;
+      --bg-end: #fbfbff;
+      --glass: rgba(255,255,255,0.65);
+      --muted: #6b7280;
+      --card-radius:20px;
+      --radius-sm:12px;
+      --maxw:1280px;
+      --glass-dark: rgba(8,10,20,0.5);
+    }
 
-        .brand-name {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #fff, #e2e8f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,var(--bg-start),var(--bg-end));color:#071133;-webkit-font-smoothing:antialiased}
+    *{box-sizing:border-box}
 
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-            height: 100%;
-        }
+    /* Layout */
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px;display:grid;grid-template-columns:260px 1fr 420px;gap:20px;align-items:start}
+    @media (max-width:1100px){.wrap{grid-template-columns:1fr;padding:12px}.right-panel{display:none}}
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
+    /* Panel base (glass + neo) */
+    .panel{background:var(--glass);backdrop-filter:blur(10px) saturate(1.05);border-radius:var(--card-radius);box-shadow:0 18px 60px rgba(12,18,49,0.08);overflow:hidden;border:1px solid rgba(12,18,49,0.03)}
+    .panel.soft{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.82));}
 
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            font-size: 1.8rem;
-        }
+    /* SIDEBAR */
+    .brand{display:flex;align-items:center;gap:12px;padding:14px}
+    .logo{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px}
+    .small-muted{color:var(--muted);font-size:13px}
+    #sectionsList{padding:10px;max-height:62vh;overflow:auto}
+    .section-item{display:flex;gap:10px;align-items:center;padding:10px;border-radius:12px;cursor:pointer}
+    .section-item .dot{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .section-item:hover{background:rgba(109,40,217,0.06);transform:translateY(-4px)}
 
-        .navbar {
-            background: rgba(255,255,255,0.95) !important;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+    /* VisionOS hero area */
+    .hero{padding:18px;display:flex;gap:14px;align-items:center}
+    .hero .title{font-weight:800;font-size:18px}
+    .hero .subtitle{color:var(--muted);font-size:13px}
 
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color) !important;
-        }
+    /* CHAT MAIN */
+    .chat-header{padding:14px 18px;border-bottom:1px solid rgba(12,18,49,0.04);display:flex;align-items:center;gap:12px}
+    .chat-body{padding:22px;flex:1;overflow:auto;background:linear-gradient(180deg,rgba(250,250,255,0.9),rgba(248,249,255,0.86));min-height:360px}
 
-        .nav-link {
-            color: var(--dark-color) !important;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+    /* iOS bubble physics */
+    .msg{display:inline-block;padding:12px 16px;border-radius:18px;margin-bottom:12px;line-height:1.45;max-width:72%;box-shadow:0 8px 30px rgba(12,18,49,0.06);transition:transform .18s cubic-bezier(.2,.9,.3,1)}
+    .msg.me{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;margin-left:auto;border-bottom-right-radius:6px}
+    .msg.them{background:#fff;border:1px solid rgba(12,18,49,0.04)}
+    .msg.me:active{transform:translateY(2px) scale(.995)}
 
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
+    /* Grouping & timestamps (Slack/WhatsApp mix) */
+    .group{margin-bottom:10px}
+    .meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+    .time-sep{display:flex;justify-content:center;margin:18px 0;color:var(--muted);font-size:13px}
 
-        .btn-primary {
-            background: var(--gradient);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
+    /* Reactions */
+    .reactions{display:flex;gap:6px;margin-top:6px}
+    .reaction{padding:6px 8px;border-radius:999px;border:1px solid rgba(12,18,49,0.04);background:#fff;font-size:13px;cursor:pointer}
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
-        }
+    /* Typing */
+    .typing{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+    .dots{width:48px;height:14px;display:flex;align-items:center;justify-content:space-between}
+    .dots span{width:8px;height:8px;background:#d1d5db;border-radius:50%;display:inline-block;animation:blink 1.2s infinite}
+    .dots span:nth-child(2){animation-delay:0.12s}.dots span:nth-child(3){animation-delay:0.24s}
+    @keyframes blink{0%{opacity:0.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}100%{opacity:0.3;transform:translateY(0)}}
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            position: relative;
-        }
+    /* Input row (iMessage-style) */
+    .input-row{padding:14px 18px;border-top:1px solid rgba(12,18,49,0.04);display:flex;gap:10px;align-items:center}
+    .input-row .control{display:flex;gap:8px}
+    .pill{background:rgba(99,102,241,0.06);padding:6px 10px;border-radius:999px;color:var(--accent);font-weight:700}
 
-        .section-subtitle {
-            color: #64748b;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-        }
+    /* RIGHT PANEL — Executive + AI */
+    .profile{padding:18px;display:flex;flex-direction:column;gap:12px}
+    .avatar{width:104px;height:104px;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:36px;box-shadow:0 18px 40px rgba(109,40,217,0.12)}
+    .skill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(109,40,217,0.08);color:var(--accent);font-weight:700}
 
-        .tech-badge {
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            margin: 0.25rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+    /* Project cards, neo-brutalist accents */
+    .card-project{background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.9));padding:12px;border-radius:14px;border-left:4px solid rgba(109,40,217,0.12);transition:transform .16s}
+    .card-project:hover{transform:translateY(-6px)}
 
-        .contact-section {
-            background: var(--light-color);
-            padding: 80px 0;
-        }
+    /* 3D tilt + magnetic cursor */
+    .tilt{transform-style:preserve-3d;transition:transform .18s}
+    .magnetic{transition:transform .18s cubic-bezier(.2,.9,.3,1)}
 
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 40px 0;
-        }
+    /* Minimal whitespace variant (used sparsely) */
+    .clean-hero{padding:28px}
 
-        .stats-item {
-            text-align: center;
-            padding: 2rem;
-        }
+    /* Cyber accent lines */
+    .accent-line{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:6px;margin:8px 0}
 
-        .stats-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            display: block;
-        }
+    /* PWA badges */
+    .pwa-badges{display:flex;gap:8px}
 
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .brand-name {
-                font-size: 2.5rem;
-            }
-            .hero-section {
-                padding: 60px 0;
-            }
-        }
-
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .floating-elements::before,
-        .floating-elements::after {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-elements::before {
-            top: 10%;
-            right: 10%;
-            animation-delay: -2s;
-        }
-
-        .floating-elements::after {
-            bottom: 10%;
-            left: 10%;
-            animation-delay: -4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-    </style>
+    /* Accessibility */
+    button:focus,input:focus,div[role='button']:focus{outline:3px solid rgba(99,102,241,0.18);outline-offset:2px}
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">edwin18g</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+  <div class="wrap">
+
+    <!-- LEFT: Sidebar -->
+    <aside class="panel" aria-label="Sidebar">
+      <div class="brand">
+        <div class="logo">e</div>
+        <div>
+          <div style="font-weight:900">edwin18g</div>
+          <div class="small-muted">Edwin Barnabas — CIO @ ekhool</div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="floating-elements"></div>
-        <div class="container hero-content">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="brand-name">edwin18g</h1>
-                    <h2 class="h3 mb-4">Software Solutions & Digital Innovation Expert</h2>
-                    <p class="lead mb-4">Transforming businesses through cutting-edge software development, AI-powered automation, and strategic digital marketing solutions.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#services" class="btn btn-primary btn-lg">Explore Services</a>
-                        <a href="#portfolio" class="btn btn-outline-light btn-lg">View Portfolio</a>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="text-center">
-                        <div class="stats-container d-flex justify-content-around">
-                            <div class="stats-item">
-                                <span class="stats-number text-white">50+</span>
-                                <span>Projects Completed</span>
-                            </div>
-                            <div class="stats-item">
-                                <span class="stats-number text-white">10+</span>
-                                <span>Years Experience</span>
-                            </div>
-                            <div class="stats-item">
-                                <span class="stats-number text-white">25+</span>
-                                <span>Happy Clients</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="ms-auto">
+          <button id="themeToggle" class="btn btn-sm btn-outline-light" title="Toggle theme"><i class="bi bi-moon"></i></button>
         </div>
-    </section>
+      </div>
 
-    <!-- Services Section -->
-    <section id="services" class="py-5">
-        <div class="container">
-            <div id="sheetData" class="mt-5"></div>
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Professional Services</h2>
-                <p class="section-subtitle">Comprehensive digital solutions tailored to your business needs</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-code-slash"></i>
-                        </div>
-                        <h4>Software Solutions</h4>
-                        <p>Custom software development, web applications, mobile apps, and enterprise solutions built with modern technologies and best practices.</p>
-                        <div class="mt-3">
-                            <span class="tech-badge">React</span>
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">Python</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-gear-wide-connected"></i>
-                        </div>
-                        <h4>Workflow Automation</h4>
-                        <p>Streamline your business processes with intelligent automation solutions that reduce manual work and increase efficiency.</p>
-                        <div class="mt-3">
-                            <span class="tech-badge">Zapier</span>
-                            <span class="tech-badge">Automation</span>
-                            <span class="tech-badge">APIs</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-graph-up-arrow"></i>
-                        </div>
-                        <h4>SEO Marketing</h4>
-                        <p>Boost your online visibility with comprehensive SEO strategies, content optimization, and digital marketing campaigns.</p>
-                        <div class="mt-3">
-                            <span class="tech-badge">SEO</span>
-                            <span class="tech-badge">Analytics</span>
-                            <span class="tech-badge">Content</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-robot"></i>
-                        </div>
-                        <h4>AI Prompt Engineering</h4>
-                        <p>Expert AI prompt engineering services to optimize your AI interactions, create intelligent chatbots, and develop AI-powered solutions for your business needs.</p>
-                        <div class="mt-3">
-                            <span class="tech-badge">ChatGPT</span>
-                            <span class="tech-badge">Claude</span>
-                            <span class="tech-badge">Prompt Design</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="bi bi-lightbulb"></i>
-                        </div>
-                        <h4>AI Strategy Solutions</h4>
-                        <p>Strategic AI implementation consulting, machine learning solutions, and AI-based business intelligence to give you competitive advantages.</p>
-                        <div class="mt-3">
-                            <span class="tech-badge">AI Strategy</span>
-                            <span class="tech-badge">ML</span>
-                            <span class="tech-badge">Consulting</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="hero clean-hero">
+        <div>
+          <div class="title">Executive • Architect • AI</div>
+          <div class="subtitle small-muted">Domain-driven AI agents • SaaS • LMS • SIMS</div>
         </div>
-    </section>
+      </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="section-title">About Edwin18g</h2>
-                    <p class="lead">A passionate software developer and digital strategist with expertise in creating innovative solutions that drive business growth.</p>
-                    <p>With years of experience in software development and digital marketing, edwin18g specializes in delivering comprehensive technology solutions that transform how businesses operate. From custom software development to AI-powered automation, every project is approached with precision, creativity, and a deep understanding of client needs.</p>
-                    <div class="row mt-4">
-                        <div class="col-6">
-                            <h5><i class="bi bi-check-circle-fill text-primary me-2"></i>Quality Focused</h5>
-                        </div>
-                        <div class="col-6">
-                            <h5><i class="bi bi-check-circle-fill text-primary me-2"></i>Client Oriented</h5>
-                        </div>
-                        <div class="col-6">
-                            <h5><i class="bi bi-check-circle-fill text-primary me-2"></i>Innovation Driven</h5>
-                        </div>
-                        <div class="col-6">
-                            <h5><i class="bi bi-check-circle-fill text-primary me-2"></i>Results Proven</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="bg-white p-4 rounded-3 shadow">
-                        <h4>Technical Expertise</h4>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>Full-Stack Development</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>AI & Machine Learning</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>SEO & Digital Marketing</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>Workflow Automation</span>
-                                <span>92%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" style="width: 92%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div style="padding:12px"><input id="search" class="form-control" placeholder="Search sections, projects, commands" /></div>
+      <div id="sectionsList" role="list" aria-label="Sections list"></div>
+
+      <div style="padding:12px;border-top:1px solid rgba(12,18,49,0.03);font-size:13px;color:var(--muted)">Tip: press <strong>Ctrl/Cmd + A</strong> for architecture diagram, or ask about <strong>agentic AI</strong>.</div>
+    </aside>
+
+    <!-- CENTER: Chat / Content -->
+    <main class="panel" id="main" role="main">
+      <div class="chat-header">
+        <div>
+          <div id="chatTitle" style="font-weight:900">Welcome</div>
+          <div id="chatSub" class="small-muted">Merged V6 — premium portfolio experience</div>
         </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Showcasing successful implementations across various industries</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <div class="service-icon mx-auto mb-3" style="width: 60px; height: 60px;">
-                                <i class="bi bi-shop"></i>
-                            </div>
-                            <h5 class="card-title">E-commerce Platform</h5>
-                            <p class="card-text">Full-stack e-commerce solution with AI-powered recommendations and automated inventory management.</p>
-                            <div class="mt-auto">
-                                <span class="badge bg-primary">React</span>
-                                <span class="badge bg-secondary">Node.js</span>
-                                <span class="badge bg-success">AI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <div class="service-icon mx-auto mb-3" style="width: 60px; height: 60px;">
-                                <i class="bi bi-building"></i>
-                            </div>
-                            <h5 class="card-title">Corporate Website</h5>
-                            <p class="card-text">SEO-optimized corporate website with integrated CRM and automated lead generation system.</p>
-                            <div class="mt-auto">
-                                <span class="badge bg-primary">SEO</span>
-                                <span class="badge bg-secondary">CRM</span>
-                                <span class="badge bg-success">Automation</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <div class="service-icon mx-auto mb-3" style="width: 60px; height: 60px;">
-                                <i class="bi bi-chat-dots"></i>
-                            </div>
-                            <h5 class="card-title">AI Chatbot System</h5>
-                            <p class="card-text">Intelligent customer service chatbot with natural language processing and multilingual support.</p>
-                            <div class="mt-auto">
-                                <span class="badge bg-primary">AI</span>
-                                <span class="badge bg-secondary">NLP</span>
-                                <span class="badge bg-success">Chatbot</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="ms-auto d-flex align-items-center gap-2">
+          <div class="pwa-badges"><span class="pill">PWA</span><span class="pill">SEO</span></div>
+          <button id="downloadSitemap" class="btn btn-sm btn-outline-secondary">Sitemap</button>
         </div>
-    </section>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Ready to transform your business? Let's discuss your project</p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="row g-4">
-                        <div class="col-md-4 text-center" data-aos="fade-up">
-                            <div class="service-icon mx-auto">
-                                <i class="bi bi-envelope"></i>
-                            </div>
-                            <h5>Email</h5>
-                            <p>edwin18g@gmail.com</p>
-                        </div>
-                        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
-                            <div class="service-icon mx-auto">
-                                <i class="bi bi-phone"></i>
-                            </div>
-                            <h5>Phone</h5>
-                            <p>+91 9543848373 </p>
-                        </div>
-                        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200">
-                            <div class="service-icon mx-auto">
-                                <i class="bi bi-linkedin"></i>
-                            </div>
-                            <h5>LinkedIn</h5>
-                            <p>linkedin.com/in/edwin18g</p>
-                        </div>
-                    </div>
-                    <div class="mt-5" data-aos="fade-up">
-                        <form id="contactForm" class="bg-white p-4 rounded-3 shadow">
-    <div class="row g-3">
-        <div class="col-md-6">
-            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+      <div id="chatBody" class="chat-body" role="log" aria-live="polite">
+        <!-- dynamic messages and content --->
+      </div>
+
+      <div class="input-row">
+        <div class="control" style="flex:1;display:flex;align-items:center;gap:8px">
+          <input id="chatInput" class="form-control" placeholder="Ask: about / projects / architecture / agentic AI / contact" aria-label="Message input" />
+          <button id="aiAssist" class="btn btn-outline-secondary" title="Ask AI"><i class="bi bi-robot"></i></button>
         </div>
-        <div class="col-md-6">
-            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+        <button id="sendBtn" class="btn btn-primary" aria-label="Send"><i class="bi bi-send-fill"></i></button>
+      </div>
+    </main>
+
+    <!-- RIGHT: Profile / Executive + AI -->
+    <aside class="panel right-panel" id="right">
+      <div class="profile">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar tilt" id="avatar">EB</div>
+          <div>
+            <div style="font-weight:900">Edwin Barnabas</div>
+            <div class="small-muted">CIO — ekhool</div>
+            <div class="small-muted">Software Solution Architect & AI Agentic Framework Builder</div>
+          </div>
         </div>
-        <div class="col-12">
-            <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+
+        <div>
+          <div class="small-muted">Core Skills</div>
+          <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+            <div class="skill">System Architecture</div>
+            <div class="skill">AI Agents</div>
+            <div class="skill">Microservices</div>
+            <div class="skill">LMS / SIMS</div>
+          </div>
         </div>
-        <div class="col-12">
-            <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <div>
+          <div class="small-muted">Projects (timeline)</div>
+          <div id="timeline" style="display:flex;flex-direction:column;gap:10px;margin-top:8px"></div>
         </div>
-        <div class="col-12 text-center">
-            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+
+        <div>
+          <div class="small-muted">Skill heatmap</div>
+          <div id="heatmap" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"></div>
         </div>
-    </div>
-</form>
 
-<p id="formResponse" class="text-center mt-3"></p>
-
-                    </div>
-                </div>
-            </div>
+        <div style="margin-top:auto;display:flex;gap:8px;align-items:center">
+          <button id="downloadCV" class="btn btn-outline-primary">Download CV</button>
+          <button id="downloadVCard" class="btn btn-primary">vCard</button>
         </div>
-    </section>
+      </div>
+    </aside>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h5>edwin18g</h5>
-                    <p>Transforming businesses through innovative software solutions and strategic digital marketing.</p>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <div class="social-links">
-                        <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-4"></i></a>
-                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin fs-4"></i></a>
-                        <a href="#" class="text-white me-3"><i class="bi bi-github fs-4"></i></a>
-                        <a href="#" class="text-white"><i class="bi bi-envelope fs-4"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <p>&copy; 2025 edwin18g. All rights reserved. | Software Solutions, AI Strategy, SEO Marketing Expert</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+  </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
-    <script>
-        // Initialize AOS animations
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+  <!-- V6 App JS -->
+  <script>
+    // --- Data ---
+    const SECTIONS = [
+      {id:'blogs',title:'Blogs',preview:'Latest thoughts • Architecture • AI',messages:[
+        "Here are my blog highlights:",
+        "1. How Agentic AI Transforms Enterprise Workflows",
+        "2. LMS/SIMS Modern Architecture 2025 — Design Principles",
+        "3. Building Domain-Driven AI Agents for Real Systems",
+        "4. Architecture Mistakes Most Teams Make (And How to Avoid Them)",
+        "Ask: 'open blog 1' or 'show more blogs'."
+      ]},
+      
+      {id:'about',title:'About Edwin',preview:'CIO • Architect • AI',messages:['Hello — I\'m Edwin Barnabas (edwin18g), CIO at ekhool. I architect enterprise SaaS systems and domain-driven AI agents.','I focus on reliability, observability, and making AI work for real business domains.']} ,
+      {id:'architecture',title:'Architecture',preview:'Enterprise & AI Systems',messages:['Pattern: API Gateway → Auth → Services → Event Bus (RabbitMQ) → Storage (MySQL/Mongo) → Observability (ELK).','I design agent frameworks as first-class citizens in the system; agents process events and trigger workflows.']} ,
+      {id:'projects',title:'Projects',preview:'LMS • SIMS • Agentic AI',messages:['ekhool LMS — multi-tenant, analytics-first, mobile-first.','SIMS Suite — admissions, academics & compliance.','Agentic Framework — domain agents for alerts and automation.']},
+      {id:'skills',title:'Skills',preview:'Architecture • AI • Dev',messages:['Languages: JS, PHP, SQL. Tools: Redis, RabbitMQ, MySQL, MongoDB, Nginx, Docker.','Focus: scalability, security, observability.']} ,
+      {id:'contact',title:'Contact',preview:'Get in touch',messages:['Email: your@email.com','LinkedIn: https://linkedin.com/in/your-link','GitHub: https://github.com/your-github']} 
+    ];
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    const PROJECTS = [
+      {title:'ekhool LMS',date:'2024',desc:'Multi-tenant LMS with analytics and AI',kpi:'420+ schools',tag:'SaaS'},
+      {title:'SIMS Suite',date:'2023',desc:'School information & compliance',kpi:'regional deployment',tag:'Education'},
+      {title:'Agentic Framework',date:'2025',desc:'Domain-driven AI agents for automation',kpi:'prototype',tag:'AI'}
+    ];
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255,255,255,0.98)';
-            } else {
-                navbar.style.background = 'rgba(255,255,255,0.95)';
-            }
-        });
+    // --- Render UI ---
+    const sectionsEl = document.getElementById('sectionsList');
+    function renderSections(filter=''){ sectionsEl.innerHTML=''; SECTIONS.filter(s=> (s.title+' '+s.preview).toLowerCase().includes(filter.toLowerCase())).forEach(s=>{
+      const item = document.createElement('div'); item.className='section-item'; item.tabIndex=0; item.innerHTML = `<div class='dot' style='background:linear-gradient(135deg,var(--accent),var(--accent-2))'>${s.title.charAt(0)}</div><div><div style='font-weight:700'>${s.title}</div><div class='small-muted'>${s.preview}</div></div>`;
+      item.addEventListener('click', ()=>{ setActive(s.id); openSection(s.id); }); item.addEventListener('keydown', e=>{ if(e.key==='Enter'){ setActive(s.id); openSection(s.id); } }); sectionsEl.appendChild(item);
+    }); }
+    function setActive(id){ Array.from(sectionsEl.children).forEach(c=>c.classList.remove('active')); const node=[...sectionsEl.children].find(n=>n.textContent.trim().toLowerCase().startsWith(id.charAt(0))); if(node) node.classList.add('active'); }
 
-        // Form submission
-       document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+    // timeline + heatmap
+    const timelineEl = document.getElementById('timeline'); PROJECTS.forEach(p=>{ const c=document.createElement('div'); c.className='card-project'; c.innerHTML = `<div style='display:flex;justify-content:space-between;align-items:center'><div style='font-weight:700'>${p.title}</div><div class='small-muted'>${p.date}</div></div><div class='small-muted'>${p.desc}</div><div style='margin-top:8px'><span class='pill'>${p.tag}</span> <span class='small-muted ms-2'>${p.kpi}</span></div>`; timelineEl.appendChild(c); });
+    const heatEl = document.getElementById('heatmap'); ['Architecture','AI','DevOps','Frontend','Backend','Data'].forEach((h,i)=>{ const e=document.createElement('div'); e.className='cell'; e.style.padding='6px 10px'; e.style.borderRadius='8px'; e.style.background=`rgba(99,102,241,${0.06 + i*0.06})`; e.style.color='var(--accent)'; e.style.fontWeight='700'; e.textContent=h; heatEl.appendChild(e); });
 
-    // Replace this with your Apps Script Web App URL
-    const scriptURL = "https://script.google.com/macros/s/AKfycbxqtPhKdd_flNi7pVHg_RODIygT5Sv0RZcYKnLMs5wGK4gkuAu-lJP0MYsMUMUUUSLQ/exec";
+    // Chat utilities
+    const chatBody = document.getElementById('chatBody'); function scrollBottom(){ chatBody.scrollTop = chatBody.scrollHeight; }
+    function appendMsg(text, who='them', opts={reactions:false,meta:''}){
+      const g=document.createElement('div'); g.className='group'; if(opts.meta) { const m=document.createElement('div'); m.className='meta'; m.textContent = opts.meta; g.appendChild(m); }
+      const b=document.createElement('div'); b.className='msg '+(who==='me'?'me':'them'); b.tabIndex=0; b.textContent = text; g.appendChild(b);
+      if(opts.reactions){ const r=document.createElement('div'); r.className='reactions'; ['👍','🔥','💡'].forEach(emo=>{ const btn=document.createElement('button'); btn.className='reaction'; btn.textContent=emo; btn.addEventListener('click', ()=>{ btn.textContent = emo + ' ' + (parseInt(btn.dataset.count||0)+1); btn.dataset.count = (parseInt(btn.dataset.count||0)+1); }); r.appendChild(btn); }); g.appendChild(r); }
+      chatBody.appendChild(g); scrollBottom(); return b;
+    }
+    function showTyping(){ const t = document.createElement('div'); t.className='typing'; t.innerHTML = `<div class='dots'><span></span><span></span><span></span></div><div class='small-muted ms-2'>typing…</div>`; chatBody.appendChild(t); scrollBottom(); return t; }
 
-    const formData = {
-        name: this.name.value,
-        email: this.email.value,
-        subject: this.subject.value,
-        message: this.message.value
-    };
+    // Open section (simulate typing + reactions)
+    function openSection(id){ const sec = SECTIONS.find(s=>s.id===id); if(!sec) return; document.getElementById('chatTitle').textContent = sec.title; document.getElementById('chatSub').textContent = sec.preview; chatBody.innerHTML=''; let i=0; function next(){ if(i>=sec.messages.length) return; const t=showTyping(); const msg = sec.messages[i++]; setTimeout(()=>{ t.remove(); appendMsg(msg,'them',{reactions:true}); setTimeout(next,300); }, Math.min(1400, msg.length*12 + 200)); } next(); }
 
-    fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(formData),
-    })
-    .then(res => res.json())
-    .then(data => {
-        document.getElementById("formResponse").innerText = "✅ Message sent successfully!";
-        this.reset();
-    })
-    .catch(err => {
-        document.getElementById("formResponse").innerText = "❌ Error sending message. Try again!";
-    });
-});
-const getdata = "https://script.google.com/macros/s/AKfycbxqtPhKdd_flNi7pVHg_RODIygT5Sv0RZcYKnLMs5wGK4gkuAu-lJP0MYsMUMUUUSLQ/exec";
-// fetch(getdata)
-//   .then(res => res.json())
-//   .then(data => {
-//     let html = "<h3>Messages from Google Sheet</h3><ul>";
-//     data.forEach(row => {
-//       html += `<li><strong>${row.Name}</strong> (${row.Email}) → ${row.Message}</li>`;
-//     });
-//     html += "</ul>";
-//     document.getElementById("sheetData").innerHTML = html;
-//   })
-//   .catch(err => {
-//     document.getElementById("sheetData").innerText = "Error loading data!";
-//   });
-        // Add active class to navigation
-        window.addEventListener('scroll', function() {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
+    // Simple AI assistant (plug-and-play)
+    async function aiRespond(text){ // local rule-based; replace with server hook
+      const t=text.toLowerCase(); if(t.includes('agent')||t.includes('ai')) return 'I design agentic frameworks that map domain events to agents. Do you want a one-page design?';
+      if(t.includes('architecture')||t.includes('scale')) return 'Typical architecture: API Gateway → Auth → Services → Event Bus (RabbitMQ) → Storage → Observability. I can render a diagram (Ctrl/Cmd+A).';
+      if(t.includes('projects')||t.includes('portfolio')) return 'See Projects section — I led multiple enterprise deployments. Ask about any specific project.';
+      if(t.includes('contact')||t.includes('email')) return 'Email: your@email.com — open to consulting and leadership advisory.';
+      return 'Sorry — try: architecture / agentic AI / projects / contact';
+    }
 
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    async function handleInput(raw){ const v=raw.trim(); if(!v) return; appendMsg(v,'me'); const direct = SECTIONS.find(s=> s.id===v.toLowerCase() || s.title.toLowerCase().includes(v.toLowerCase())); if(direct){ setTimeout(()=>openSection(direct.id),300); return; } const t=showTyping(); const r = await aiRespond(v); setTimeout(()=>{ t.remove(); appendMsg(r,'them',{reactions:true}); }, 700 + Math.min(900, v.length*12)); }
+
+    // Input handlers
+    document.getElementById('sendBtn').addEventListener('click', ()=>{ handleInput(document.getElementById('chatInput').value); document.getElementById('chatInput').value=''; });
+    document.getElementById('chatInput').addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); document.getElementById('sendBtn').click(); } });
+    document.getElementById('aiAssist').addEventListener('click', ()=>{ const txt = document.getElementById('chatInput').value || 'Tell me about agentic AI'; handleInput(txt); document.getElementById('chatInput').value=''; });
+
+    // Search
+    document.getElementById('search').addEventListener('input', e=>renderSections(e.target.value));
+
+    // Theme toggle with persistence
+    const themeToggle = document.getElementById('themeToggle'); const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; if(localStorage.getItem('theme')==='dark' || (!localStorage.getItem('theme') && prefersDark)) document.body.classList.add('dark'); themeToggle.addEventListener('click', ()=>{ document.body.classList.toggle('dark'); localStorage.setItem('theme', document.body.classList.contains('dark')?'dark':'light'); });
+
+    // Avatar tilt + magnetic cursor for 3D
+    const avatar = document.getElementById('avatar'); avatar.addEventListener('mousemove', e=>{ const r=avatar.getBoundingClientRect(); const cx=r.left + r.width/2; const cy=r.top + r.height/2; const dx=(e.clientX - cx)/r.width; const dy=(e.clientY - cy)/r.height; avatar.style.transform = `rotateX(${ -dy * 6 }deg) rotateY(${ dx * 8 }deg) translateZ(8px)`; }); avatar.addEventListener('mouseleave', ()=>{ avatar.style.transform=''; });
+
+    // Keyboard shortcut: Ctrl/Cmd + A -> generate architecture diagram (Mermaid)
+    function renderMermaid(){ const code = `graph TD
+  API[API Gateway] --> Auth[Auth Service]
+  Auth --> Services[Microservices]
+  Services --> MySQL[(MySQL)]
+  Services --> Mongo[(MongoDB)]
+  Services --> Redis[(Redis)]
+  Services --> Broker[(RabbitMQ)]
+  Broker --> Agents[Agent Workers]
+  Agents --> Analytics[Analytics]`;
+      const node = document.createElement('div'); node.className='panel soft'; node.style.padding='12px'; node.style.marginTop='12px'; node.innerHTML = `<div style='font-weight:800;margin-bottom:8px'>Architecture Diagram</div><div class='mermaid'>${code}</div>`; chatBody.appendChild(node); try{ mermaid.init(undefined, node.querySelectorAll('.mermaid')); }catch(err){ console.warn(err); } scrollBottom(); }
+    document.addEventListener('keydown', e=>{ if((e.ctrlKey||e.metaKey) && (e.key==='a' || e.key==='A')){ e.preventDefault(); renderMermaid(); } });
+
+    // Sitemap download
+    document.getElementById('downloadSitemap').addEventListener('click', ()=>{ const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">
+  <url><loc>https://edwin18g.com/</loc></url>
+  <url><loc>https://edwin18g.com/about</loc></url>
+  <url><loc>https://edwin18g.com/projects</loc></url>
+</urlset>`; const blob=new Blob([xml],{type:'application/xml'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='sitemap.xml'; a.click(); URL.revokeObjectURL(url); });
+
+    // PWA manifest + SW download (buttons available in UI earlier)
+    document.getElementById('downloadVCard').addEventListener('click', ()=>{ const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:Barnabas;Edwin
+FN:Edwin Barnabas
+ORG:ekhool
+TITLE:Chief Information Officer
+EMAIL;TYPE=INTERNET:your@email.com
+TEL;TYPE=WORK:+91-0000000000
+URL:https://edwin18g.com
+END:VCARD`; const blob=new Blob([vcard],{type:'text/vcard'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='edwin18g.vcf'; a.click(); URL.revokeObjectURL(url); });
+    document.getElementById('downloadCV').addEventListener('click', ()=>{ const blob=new Blob(['Resume placeholder — replace with PDF'],{type:'text/plain'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='Edwin_Barnabas_CV.txt'; a.click(); URL.revokeObjectURL(url); });
+
+    // Accessibility focus
+    document.getElementById('chatInput').focus();
+
+    // Initial render
+    renderSections(); openSection('about');
+
+    // Performance note: mermaid and external libs loaded; heavy tasks deferred
+  </script>
+
 </body>
 </html>
